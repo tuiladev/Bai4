@@ -30,19 +30,27 @@ html {
   font-size: 62.5%;
 }
 
+/* ============ VARIABLES ============ */
+:root {
+  --maxwidth: 1340px;
+}
+
 /* ============ BASE ============ */
 #wrapper {
-  background-color: #f9f9f9;
+  background-color: #fefefe;
   height: 100vh;
 }
 .product-grid {
-  max-width: 1370px;
+  max-width: calc(var(--maxwidth) + 30px);
   padding: 30px 15px;
   margin: 0 auto;
 }
 
 /* ============ CATEGORY BAR ============ */
 .category-title {
+  display: inline-block;
+  padding-bottom: 7px;
+  border-bottom: 3px solid #a82428;
   text-transform: uppercase;
   font-size: 1.8rem;
   font-weight: 600;
@@ -51,11 +59,12 @@ html {
 .category-title::after {
   content: "";
   position: absolute;
-  width: 100%;
+  bottom: -3px;
+  left: 100%;
+  z-index: 0;
+  width: calc(var(--maxwidth) - 100%);
   height: 3px;
-  background-image: linear-gradient(to right, #a82428 11%, #fff 11%);
-  bottom: -10px;
-  left: 0;
+  background-color: rgb(244, 244, 244);
 }
 
 /* ============ PRODUCT LIST ============ */
@@ -81,7 +90,7 @@ html {
 }
 .product-item {
   /* width: calc((100% - 25px) / 6);   ---  Ket hop them khi dan layout bang flex-box */
-  
+
   /* Su dung float */
   float: left;
   width: calc((100% - 25px) / 6);
