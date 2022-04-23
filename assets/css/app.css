@@ -1,0 +1,169 @@
+/* ============ CSS RESET ============ */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ============ FONT & TYPOGRAPHY ============ */
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 400;
+  src: url(../fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 600;
+  src: url(../fonts/Montserrat-SemiBold.ttf);
+}
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 700;
+  src: url(../fonts/Montserrat-Bold.ttf);
+}
+
+#wrapper {
+  font-family: "Montserrat";
+  line-height: 1;
+}
+html {
+  font-size: 62.5%;
+}
+
+/* ============ BASE ============ */
+#wrapper {
+  background-color: #f9f9f9;
+  height: 100vh;
+}
+.product-grid {
+  max-width: 1370px;
+  padding: 30px 15px;
+  margin: 0 auto;
+}
+
+/* ============ CATEGORY BAR ============ */
+.category-title {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 600;
+  position: relative;
+}
+.category-title::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-image: linear-gradient(to right, #a82428 11%, #fff 11%);
+  bottom: -10px;
+  left: 0;
+}
+
+/* ============ PRODUCT LIST ============ */
+.product-list {
+  list-style: none;
+  margin-top: 30px;
+}
+
+/* ============ DAN LAYOUT ============ */
+.product-list {
+  /* 
+    Su dung grid
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px; 
+  */
+  /* 
+    Su dung flex-box
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; 
+  */
+}
+.product-item {
+  /* width: calc((100% - 25px) / 6);   ---  Ket hop them khi dan layout bang flex-box */
+  
+  /* Su dung float */
+  float: left;
+  width: calc((100% - 25px) / 6);
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.product-item:nth-child(6n) {
+  margin-right: 0;
+}
+
+/* ============ PRODUCT ITEM ============ */
+.product-item {
+  background-color: #fff;
+  padding: 30px 15px 10px 15px;
+  font-size: 1.4rem;
+  box-shadow: 0 0 5px 0px rgb(0 0 0 / 5%);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+.product-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px 0px rgb(0 0 0 / 10%);
+  z-index: 999999;
+}
+.product-item__link {
+  text-decoration: none;
+}
+.product-item__label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  display: inline-block;
+  padding: 5px;
+  background-color: #53be04;
+}
+.product-item__label::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #53be04;
+}
+.product-item__image {
+  width: 160px;
+  height: 140px;
+  object-fit: contain;
+  margin: 0 auto 20px;
+  display: block;
+}
+.product-item__info {
+  text-align: center;
+  line-height: 1.3;
+}
+.product-item__name {
+  height: 52px;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #5b595d;
+  margin-bottom: 10px;
+}
+.product-item__code {
+  display: block;
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+.product-item__price {
+  font-weight: 600;
+  color: #5b595d;
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 10px;
+}
+.product-item__price strong {
+  color: #a82428;
+}
