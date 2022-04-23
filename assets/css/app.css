@@ -39,6 +39,7 @@ html {
 #wrapper {
   background-color: #fefefe;
   height: 100vh;
+  margin: 0 auto;
 }
 .product-grid {
   max-width: calc(var(--maxwidth) + 30px);
